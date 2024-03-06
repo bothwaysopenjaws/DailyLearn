@@ -15,12 +15,7 @@ namespace DailyLearn.DbLib.Models
         /// <summary>
         /// Question à poser
         /// </summary>
-        public string QuestionAsked { get; set; }
-
-        /// <summary>
-        /// Url d'un éventuel média
-        /// </summary>
-        public string? UrlMedia { get; set; }
+        public string QuestionToAsk { get; set; }
 
         /// <summary>
         /// Réponses possibles
@@ -30,13 +25,13 @@ namespace DailyLearn.DbLib.Models
         /// <summary>
         /// Réponses valides
         /// </summary>
-        public HashSet<string> ValidAnswer { get; set; }
+        public HashSet<string> ValidAnswers { get; set; }
 
         /// <summary>
         /// Identifiant du sujet
         /// </summary>
         [ForeignKey(nameof(Question.Topic))]
-        public int TopidId { get; set; }
+        public int TopicId { get; set; }
 
         /// <summary>
         /// Sujet

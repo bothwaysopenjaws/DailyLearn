@@ -5,17 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DailyLearn.DbLib.Models
+namespace DailyLearn.DbLib.Models;
+
+/// <summary>
+/// Classe de base
+/// </summary>
+abstract class IdentityObject
 {
     /// <summary>
-    /// Classe de base
+    /// Identifiant
     /// </summary>
-    abstract class IdentityObject
-    {
-        /// <summary>
-        /// Identifiant
-        /// </summary>
-        [Key]
-        public int Id { get; set; }
-    }
+    [Key]
+    public int Id { get; set; }
 }
