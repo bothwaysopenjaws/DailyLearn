@@ -9,13 +9,13 @@ namespace DailyLearn.DbLib.Models;
 /// <summary>
 /// Sujet
 /// </summary>
-internal class Topic : IdentityObject
+public class Topic : IdentityObject
 {
 
     /// <summary>
     /// Nom du sujet
     /// </summary>
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// Listes de questions sur un sujet
@@ -25,9 +25,10 @@ internal class Topic : IdentityObject
     /// <summary>
     /// Constructeur d'un sujet
     /// </summary>
-    public Topic(string name)
+    public Topic()
     {
-        Name = name;
-        Questions = new List<Question>();
+        Questions = new();
     }
+
+
 }

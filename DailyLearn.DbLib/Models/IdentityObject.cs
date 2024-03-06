@@ -10,7 +10,7 @@ namespace DailyLearn.DbLib.Models;
 /// <summary>
 /// Classe de base
 /// </summary>
-abstract class IdentityObject
+public abstract class IdentityObject
 {
     /// <summary>
     /// Identifiant

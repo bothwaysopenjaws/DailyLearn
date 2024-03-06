@@ -10,7 +10,7 @@ namespace DailyLearn.DbLib.Models
     /// <summary>
     /// Question d'un sujet
     /// </summary>
-    internal class Question : IdentityObject
+    public class Question : IdentityObject
     {
         /// <summary>
         /// Question à poser
@@ -20,12 +20,7 @@ namespace DailyLearn.DbLib.Models
         /// <summary>
         /// Réponses possibles
         /// </summary>
-        public HashSet<string> PossibleAnswers { get; set; }
-
-        /// <summary>
-        /// Réponses valides
-        /// </summary>
-        public HashSet<string> ValidAnswers { get; set; }
+        public HashSet<Answer> PossibleAnswers { get; set; }
 
         /// <summary>
         /// Identifiant du sujet
@@ -37,6 +32,11 @@ namespace DailyLearn.DbLib.Models
         /// Sujet
         /// </summary>
         public Topic Topic { get; set; }
+
+        public Question()
+        {
+            PossibleAnswers = new();
+        }
 
     }
 }

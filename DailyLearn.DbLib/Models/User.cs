@@ -11,19 +11,18 @@ namespace DailyLearn.DbLib.Models;
 /// <summary>
 /// Utilisateur de l'application
 /// </summary>
-internal class User : IdentityUser
+public class User : IdentityUser
 {
     /// <summary>
     /// Pseudo de l'utilisateur
     /// </summary>
-    public string Pseudo { get; set; }
+    public string? Pseudo { get; set; }
 
     /// <summary>
     /// Constructeur d'un utilisateur
     /// </summary>
-    /// <param name="pseudo"></param>
-    public User(string pseudo) : base()
+    public User() : base()
     {
-        Pseudo = pseudo;
+
     }
 }

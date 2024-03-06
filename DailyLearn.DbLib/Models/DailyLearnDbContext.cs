@@ -11,8 +11,12 @@ namespace DailyLearn.DbLib.Models;
 /// <summary>
 /// CLasse de contexte de données de l'application
 /// </summary>
-internal class DailyLearnDbContext : IdentityDbContext
+public class DailyLearnDbContext : IdentityDbContext
 {
+    public DailyLearnDbContext(DbContextOptions options) : base(options)
+    {
+    }
+
     /// <summary>
     /// Sujets
     /// </summary>
@@ -28,21 +32,4 @@ internal class DailyLearnDbContext : IdentityDbContext
     /// </summary>
     public DbSet<Question> Questions { get; set; }
 
-    /// <summary>
-    /// Constructeur
-    /// </summary>
-    public DailyLearnDbContext(DbContextOptions<DailyLearnDbContext> options) 
-        : base(options) 
-    {
-        
-    }
-
-    /// <summary>
-    /// Méthode de création du modèle
-    /// </summary>
-    /// <param name="builder"></param>
-    protected override void OnModelCreating(ModelBuilder builder)
-    {
-        base.OnModelCreating(builder);
-    }
 }

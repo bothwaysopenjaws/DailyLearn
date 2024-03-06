@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyLearn.DbLib", "DailyLearn.DbLib\DailyLearn.DbLib.csproj", "{3547A968-79DA-464A-8F43-AD57FA53A3BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyLearn.WebApp", "DailyLearn.WebApp\DailyLearn.WebApp.csproj", "{56069FAB-0667-43C5-A673-5E8FE72D8D5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3547A968-79DA-464A-8F43-AD57FA53A3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3547A968-79DA-464A-8F43-AD57FA53A3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3547A968-79DA-464A-8F43-AD57FA53A3BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56069FAB-0667-43C5-A673-5E8FE72D8D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56069FAB-0667-43C5-A673-5E8FE72D8D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56069FAB-0667-43C5-A673-5E8FE72D8D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56069FAB-0667-43C5-A673-5E8FE72D8D5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
