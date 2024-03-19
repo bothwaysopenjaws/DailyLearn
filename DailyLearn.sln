@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyLearn.DbLib", "DailyLearn.DbLib\DailyLearn.DbLib.csproj", "{3547A968-79DA-464A-8F43-AD57FA53A3BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyLearn.DbLib", "DailyLearn.DbLib\DailyLearn.DbLib.csproj", "{3547A968-79DA-464A-8F43-AD57FA53A3BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyLearn.WebApp", "DailyLearn.WebApp\DailyLearn.WebApp.csproj", "{56069FAB-0667-43C5-A673-5E8FE72D8D5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DailyLearn.WebApp", "DailyLearn.WebApp\DailyLearn.WebApp.csproj", "{56069FAB-0667-43C5-A673-5E8FE72D8D5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

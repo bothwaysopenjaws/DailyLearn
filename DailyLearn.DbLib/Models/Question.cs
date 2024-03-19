@@ -20,7 +20,7 @@ namespace DailyLearn.DbLib.Models
         /// <summary>
         /// Réponses possibles
         /// </summary>
-        public HashSet<Answer> PossibleAnswers { get; set; }
+        public List<Answer> PossibleAnswers { get; set; }
 
         /// <summary>
         /// Identifiant du sujet
@@ -31,7 +31,7 @@ namespace DailyLearn.DbLib.Models
         /// <summary>
         /// Sujet
         /// </summary>
-        public Topic Topic { get; set; }
+        public virtual Topic? Topic { get; set; }
 
         public Question()
         {

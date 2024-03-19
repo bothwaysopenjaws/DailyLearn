@@ -17,7 +17,7 @@ public class Answer : IdentityObject
     [ForeignKey(nameof(Answer.Question))]
     public int QuestionId { get; set; }
 
-    public Question Question { get; set; }
+    public virtual Question? Question { get; set; }
 
     public bool IsCorrect { get; set; }
 
