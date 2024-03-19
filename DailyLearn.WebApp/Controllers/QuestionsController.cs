@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DailyLearn.DbLib.Models;
 using DailyLearn.WebApp.Data;
+using System.Numerics;
 
 namespace DailyLearn.WebApp.Controllers
 {
@@ -48,7 +49,9 @@ namespace DailyLearn.WebApp.Controllers
         // GET: Questions/Create
         public IActionResult Create()
         {
-            ViewData["TopicId"] = new SelectList(_context.Topics, nameof(Topic.Id), nameof(Topic.Name));
+
+            ViewBag.TopicId = new SelectList(_context.Topics.OrderByDescending(o => o.Name), nameof(Topic.Id), nameof(Topic.Name), new Question().TopicId);
+
             return View();
         }
 
@@ -57,7 +60,7 @@ namespace DailyLearn.WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("QuestionToAsk,TopicId,Id")] Question question)
+        public async Task<IActionResult> Create([Bind("QuestionToAsk, TopicId, Id, PossibleAnswers")] Question question)
         {
             if (ModelState.IsValid)
             {
@@ -65,8 +68,16 @@ namespace DailyLearn.WebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TopicId"] = new SelectList(_context.Topics, nameof(Topic.Id), nameof(Topic.Name), question.TopicId);
+            ViewBag.TopicId = new SelectList(_context.Topics.OrderByDescending(o => o.Name), nameof(Topic.Id), nameof(Topic.Name), new Question().TopicId);
             return View(question);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddAnswer([Bind("QuestionToAsk, TopicId, Id, PossibleAnswers")] Question question)
+        {
+            question.PossibleAnswers.Add(new() { IsCorrect = false });
+            return Json(question);
         }
 
         // GET: Questions/Edit/5
