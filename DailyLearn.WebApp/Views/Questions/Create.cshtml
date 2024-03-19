@@ -23,7 +23,7 @@
 
             </div>
             <button id="addAnswerButton" class="btn btn-primary">Add Answer</button>
-            <div id="possible-answsers">
+            <div id="possibleAnswsers">
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -44,7 +44,6 @@
         $(function () {
             $(document).on("change", ":checkbox", function () {
                 var hiddenName = $(this).val();
-                console.log(hiddenName)
                 if ($(this).is(":checked")) {
                     console.log(true);
                     $("#" + hiddenName).attr('value', true);
@@ -82,14 +81,8 @@
                             '<button class="btn btn-danger delete-answer">Delete</button>' +
                             '</div>' +
                             '</div>';
-                        /*
-                        var newAnswerHtml = '<div>' +
-                            '<input type="hidden" id="hiddenIsCorrect' + newAnswerIndex + '" name="possibleAnswers[' + newAnswerIndex + '].IsCorrect" value="false" />' +
-                            '<input type="text" name="possibleAnswers[' + newAnswerIndex + '].Name" value="' + newAnswer.Name + '" class="form-control" />' +
-                            '<input type="checkbox" value="hiddenIsCorrect' + newAnswerIndex + '"  ' + (newAnswer.IsCorrect ? 'checked' : '') + ' />'
 
-                            '</div>';*/
-                        $('#possible-answsers').append(newAnswerHtml);
+                        $('#possibleAnswsers').append(newAnswerHtml);
                     }
                 });
             });
